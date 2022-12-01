@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QuizzArc</string>
+    <string name="account">Do not have an account? <font color="#315333">Sign Up</font></string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
 </resources>
