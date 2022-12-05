@@ -9,12 +9,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.gms.common.SignInButton;
+
 public class Login_Page extends AppCompatActivity {
 
     EditText email;
     EditText password;
     Button signIn;
-    Button signInGoogle;
+    SignInButton signInGoogle;
     TextView signUp;
     TextView forgotPassword;
 
