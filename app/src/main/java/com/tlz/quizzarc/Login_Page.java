@@ -76,6 +76,9 @@ public class Login_Page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent intent = new Intent(Login_Page.this, Forgot_Password.class);
+                startActivity(intent);
+
             }
         });
     }
