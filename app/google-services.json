@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "3465196204",
+    "project_id": "quizarcc",
+    "storage_bucket": "quizarcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3465196204:android:91290ff212c54be3226509",
+        "android_client_info": {
+          "package_name": "com.tlz.quizzarc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3465196204-hdvie5td9694d0jet82db5fu6tf37iot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tlz.quizzarc",
+            "certificate_hash": "af0fefbdf9587aa4e232c30415a5f271994bd49c"
+          }
+        },
+        {
+          "client_id": "3465196204-opn019lr4kqk9sf5q0dhcb38a4tbvlii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZzrw3uxbqZKGUGj7_NoUcrEeaRI3qN2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3465196204-opn019lr4kqk9sf5q0dhcb38a4tbvlii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
