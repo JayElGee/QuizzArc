@@ -15,11 +15,18 @@
             android:theme="@style/Theme.QuizzArc"
             tools:targetApi="31">
         <activity
+                android:name=".Quiz_Page"
+                android:exported="false">
+            <meta-data
+                    android:name="android.app.lib_name"
+                    android:value="" />
+        </activity>
+        <activity
                 android:name=".Forgot_Password"
                 android:exported="false"
                 android:label="@string/title_activity_forgot_password"
-                android:theme="@style/Theme.QuizzArc.NoActionBar"
-                android:parentActivityName=".Login_Page">
+                android:parentActivityName=".Login_Page"
+                android:theme="@style/Theme.QuizzArc.NoActionBar">
             <meta-data
                     android:name="android.app.lib_name"
                     android:value="" />

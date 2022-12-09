@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView signOut;
+        Button start;
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
 
         signOut = findViewById(R.id.tvSignOut);
+        start = findViewById(R.id.buttonStartQuiz);
 
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,7 +39,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent = new Intent(MainActivity.this, Quiz_Page.class);
+                startActivity(intent);
+
+            }
+        });
 
     }
 }
