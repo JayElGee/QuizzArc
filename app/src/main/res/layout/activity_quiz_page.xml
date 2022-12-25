@@ -11,138 +11,180 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
             android:text="Correct Answer:"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="112dp"
-            tools:layout_editor_absoluteY="28dp" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvCorrect"
+            app:layout_constraintStart_toEndOf="@+id/tvTime" />
 
     <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
             android:text="Wrong Answer:"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="259dp"
-            tools:layout_editor_absoluteY="28dp" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvWrong"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
             android:id="@+id/tvTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="28dp"
             android:text="60"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="72dp"
-            tools:layout_editor_absoluteY="28dp" />
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
             android:text="Time:"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="26dp"
-            tools:layout_editor_absoluteY="28dp" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/tvTime"
+            app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
             android:id="@+id/tvCorrect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="28dp"
             android:text="0"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="227dp"
-            tools:layout_editor_absoluteY="28dp" />
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
             android:id="@+id/tvWrong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="28dp"
             android:text="0"
             android:textColor="#0C0C0C"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="369dp"
-            tools:layout_editor_absoluteY="28dp" />
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
             android:id="@+id/tvViewQuestion"
-            android:layout_width="350dp"
+            android:layout_width="0dp"
             android:layout_height="100dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="65dp"
             android:background="#FFFCFC"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#0C0C0C"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="30dp"
-            tools:layout_editor_absoluteY="89dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <TextView
             android:id="@+id/tvA"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="204dp"
+            android:layout_marginEnd="55dp"
             android:background="#FFFCFC"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#0C0C0C"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="204dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
             android:id="@+id/tvB"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="61dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="60dp"
             android:background="#FFFCFC"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#0C0C0C"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="265dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvA" />
 
     <TextView
             android:id="@+id/tvC"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginEnd="55dp"
             android:background="#FFFCFC"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#0C0C0C"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="326dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvA" />
 
     <TextView
             android:id="@+id/tvD"
-            android:layout_width="300dp"
+            android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="55dp"
             android:background="#FFFCFC"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#0C0C0C"
             android:textSize="20sp"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="383dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvC" />
 
     <Button
             android:id="@+id/buttonNextQuestion"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="30dp"
             android:background="#598F5C"
             android:text="Next Question"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="231dp"
-            tools:layout_editor_absoluteY="489dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/buttonEndGame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonEndGame"
+            app:layout_constraintTop_toTopOf="@+id/buttonEndGame" />
 
     <Button
             android:id="@+id/buttonEndGame"
             android:layout_width="150dp"
             android:layout_height="60dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="54dp"
             android:background="#598F5C"
             android:text="End Game"
             android:textSize="16sp"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="489dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvD" />
 </androidx.constraintlayout.widget.ConstraintLayout>
