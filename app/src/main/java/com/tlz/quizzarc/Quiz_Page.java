@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -40,6 +41,11 @@ public class Quiz_Page extends AppCompatActivity {
 
     int userCorrect = 0;
     int userWrong = 0;
+    
+    CountDownTimer countDownTimer;
+    private static final long TOTAL_TIME = 25000;
+    boolean timerCont;
+    long timeLeft = TOTAL_TIME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +69,8 @@ public class Quiz_Page extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                resetTimer();
                 game();
             }
         });
@@ -70,6 +78,9 @@ public class Quiz_Page extends AppCompatActivity {
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                pauseTimer();
+
                 userAnswer = "a";
 
                 if (correctAnswer.equals(userAnswer)) {
@@ -88,6 +99,9 @@ public class Quiz_Page extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                pauseTimer();
+
                 userAnswer = "b";
 
                 if (correctAnswer.equals(userAnswer)) {
@@ -106,6 +120,9 @@ public class Quiz_Page extends AppCompatActivity {
         c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                pauseTimer();
+
                 userAnswer = "c";
 
                 if (correctAnswer.equals(userAnswer)) {
@@ -124,6 +141,9 @@ public class Quiz_Page extends AppCompatActivity {
         d.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                pauseTimer();
+
                 userAnswer = "d";
 
                 if (correctAnswer.equals(userAnswer)) {
@@ -143,7 +163,9 @@ public class Quiz_Page extends AppCompatActivity {
     }
 
     public void game() {
-        
+
+        startTimer();
+
         a.setBackgroundColor(Color.WHITE);
         b.setBackgroundColor(Color.WHITE);
         c.setBackgroundColor(Color.WHITE);
@@ -201,5 +223,39 @@ public class Quiz_Page extends AppCompatActivity {
                 d.setBackgroundColor(Color.GREEN);
                 break;
         }
+    }
+
+    public void startTimer() {
+        countDownTimer = new CountDownTimer(timeLeft, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timeLeft = millisUntilFinished;
+                updateCountDownText();
+            }
+
+            @Override
+            public void onFinish() {
+                timerCont = false;
+                pauseTimer();
+                question.setText("Time has expired!");
+            }
+        }.start();
+
+        timerCont = true;
+    }
+
+    public void resetTimer() {
+        timeLeft = TOTAL_TIME;
+        updateCountDownText();
+    }
+
+    private void updateCountDownText() {
+        int second = (int) (timeLeft / 1000) % 60;
+        time.setText("" + second);
+    }
+
+    public void pauseTimer() {
+        countDownTimer.cancel();
+        timerCont = false;
     }
 }
