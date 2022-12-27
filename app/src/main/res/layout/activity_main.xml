@@ -4,17 +4,20 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#BDB35F"
         tools:context=".MainActivity">
 
     <TextView
             android:id="@+id/tvSignOut"
             android:layout_width="200dp"
             android:layout_height="50dp"
-            android:background="#E66464"
+            android:background="#1E6020"
             android:gravity="center"
-            android:text="Hello World!"
+            android:text="Sign Out"
             android:textAlignment="center"
+            android:textColor="#EA0D0D"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

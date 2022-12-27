@@ -3,6 +3,7 @@ package com.tlz.quizzarc;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -11,6 +12,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +31,10 @@ public class Quiz_Page extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference().child("Questions");
+
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseUser user = auth.getCurrentUser();
+    DatabaseReference databaseReferenceSecond = database.getReference();
 
     String quizQuestion;
     String answerA;
@@ -72,6 +80,16 @@ public class Quiz_Page extends AppCompatActivity {
 
                 resetTimer();
                 game();
+            }
+        });
+
+        end.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendScore();
+                Intent intent = new Intent(Quiz_Page.this, Score_Page.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -257,5 +275,17 @@ public class Quiz_Page extends AppCompatActivity {
     public void pauseTimer() {
         countDownTimer.cancel();
         timerCont = false;
+    }
+
+    public void sendScore() {
+        String userUID = user.getUid();
+        databaseReferenceSecond.child("scores").child(userUID).child("correct").setValue(userCorrect)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(Quiz_Page.this, "Scores submitted!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+        databaseReferenceSecond.child("scores").child(userUID).child("incorrect").setValue(userWrong);
     }
 }
